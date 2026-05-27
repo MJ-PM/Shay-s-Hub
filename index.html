@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shay's Hub - Excellence in details. Premium merchandise including hoodies, caps, joggers, and more.">
+    <title>Shay's Hub | Excellence in Details</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Paystack JS -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Shay's Hub.</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cart-toggle" aria-label="Open Cart">
+                Cart (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <!-- Using the generated hero banner as a background image in CSS, or inline here -->
+        <div class="hero-bg" style="background-image: url('assets/hero_banner.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>...Excellence in details.</h1>
+            <p>Simple. Elegant. Classic. The ultimate hub for premium merchandise.</p>
+            <a href="#products" class="btn btn-primary">Shop Collection</a>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <main>
+        <section id="products" class="products-section">
+            <div class="section-header">
+                <h2>Our Collection</h2>
+                <p>Curated merchandise with uncompromising quality.</p>
+            </div>
+            
+            <div class="products-grid">
+                
+                <!-- Product 1: Joggers -->
+                <article class="product-card" data-id="joggers">
+                    <div class="product-img-wrapper">
+                        <img src="assets/joggers.png" alt="Premium Maroon Joggers" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Joggers</h3>
+                        <p class="product-desc">Premium comfort sweatpants.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="type-joggers">Style:</label>
+                                <select id="type-joggers" class="custom-select print-type-select">
+                                    <option value="10000">Plain (₦10,000)</option>
+                                    <option value="12000">Flex Prints (₦12,000)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="size-joggers">Size:</label>
+                                <select id="size-joggers" class="custom-select size-select">
+                                    <option value="S">Small (S)</option>
+                                    <option value="M" selected>Medium (M)</option>
+                                    <option value="L">Large (L)</option>
+                                    <option value="XL">Extra Large (XL)</option>
+                                    <option value="XXL">Double Extra Large (XXL)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="color-joggers">Color:</label>
+                                <input type="text" id="color-joggers" class="custom-input color-input" list="color-suggestions" placeholder="Type or select color" value="Maroon">
+                            </div>
+                            <div class="option-group">
+                                <label for="design-joggers">Design/Inscription:</label>
+                                <input type="text" id="design-joggers" class="custom-input design-input" placeholder="What to print? (Optional)">
+                                <label for="file-joggers" style="margin-top: 0.5rem; display: block; font-size: 0.8rem; font-weight: normal; text-transform: none; color: var(--clr-text-muted);">Or upload a design (PNG/JPG):</label>
+                                <input type="file" id="file-joggers" class="custom-input file-input" accept="image/png, image/jpeg" style="padding: 0.5rem; font-size: 0.8rem;">
+                            </div>
+                        </div>
+                        
+                        <div class="product-action">
+                            <span class="price" id="price-joggers">₦10,000</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2: T-Shirts -->
+                <article class="product-card" data-id="tshirts">
+                    <div class="product-img-wrapper">
+                        <img src="assets/tshirt.png" alt="Premium White T-Shirt" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>T-Shirts</h3>
+                        <p class="product-desc">Classic fit, essential tee.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="type-tshirts">Style:</label>
+                                <select id="type-tshirts" class="custom-select print-type-select">
+                                    <option value="4500">Plain (₦4,500)</option>
+                                    <option value="7000">Flex Prints (₦7,000)</option>
+                                    <option value="10000">DTF (₦10,000)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="size-tshirts">Size:</label>
+                                <select id="size-tshirts" class="custom-select size-select">
+                                    <option value="S">Small (S)</option>
+                                    <option value="M" selected>Medium (M)</option>
+                                    <option value="L">Large (L)</option>
+                                    <option value="XL">Extra Large (XL)</option>
+                                    <option value="XXL">Double Extra Large (XXL)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="pos-tshirts">Print Position:</label>
+                                <select id="pos-tshirts" class="custom-select pos-select">
+                                    <option value="Front Only">Front Only</option>
+                                    <option value="Back Only">Back Only</option>
+                                    <option value="Front & Back">Front & Back</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="color-tshirts">Color:</label>
+                                <input type="text" id="color-tshirts" class="custom-input color-input" list="color-suggestions" placeholder="Type or select color" value="White">
+                            </div>
+                            <div class="option-group">
+                                <label for="design-tshirts">Design/Inscription:</label>
+                                <input type="text" id="design-tshirts" class="custom-input design-input" placeholder="What to print? (Optional)">
+                                <label for="file-tshirts" style="margin-top: 0.5rem; display: block; font-size: 0.8rem; font-weight: normal; text-transform: none; color: var(--clr-text-muted);">Or upload a design (PNG/JPG):</label>
+                                <input type="file" id="file-tshirts" class="custom-input file-input" accept="image/png, image/jpeg" style="padding: 0.5rem; font-size: 0.8rem;">
+                            </div>
+                        </div>
+                        
+                        <div class="product-action">
+                            <span class="price" id="price-tshirts">₦4,500</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3: Sweatshirts -->
+                <article class="product-card" data-id="sweatshirts">
+                    <div class="product-img-wrapper">
+                        <img src="assets/sweatshirt.png" alt="Premium Maroon Sweatshirt" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sweatshirts</h3>
+                        <p class="product-desc">Cozy, heavyweight crewneck.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="type-sweatshirts">Style:</label>
+                                <select id="type-sweatshirts" class="custom-select print-type-select">
+                                    <option value="12500">Plain (₦12,500)</option>
+                                    <option value="14000">Flex Prints (₦14,000)</option>
+                                    <option value="15000">DTF (₦15,000)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="size-sweatshirts">Size:</label>
+                                <select id="size-sweatshirts" class="custom-select size-select">
+                                    <option value="S">Small (S)</option>
+                                    <option value="M" selected>Medium (M)</option>
+                                    <option value="L">Large (L)</option>
+                                    <option value="XL">Extra Large (XL)</option>
+                                    <option value="XXL">Double Extra Large (XXL)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="pos-sweatshirts">Print Position:</label>
+                                <select id="pos-sweatshirts" class="custom-select pos-select">
+                                    <option value="Front Only">Front Only</option>
+                                    <option value="Back Only">Back Only</option>
+                                    <option value="Front & Back">Front & Back</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="color-sweatshirts">Color:</label>
+                                <input type="text" id="color-sweatshirts" class="custom-input color-input" list="color-suggestions" placeholder="Type or select color" value="Maroon">
+                            </div>
+                            <div class="option-group">
+                                <label for="design-sweatshirts">Design/Inscription:</label>
+                                <input type="text" id="design-sweatshirts" class="custom-input design-input" placeholder="What to print? (Optional)">
+                                <label for="file-sweatshirts" style="margin-top: 0.5rem; display: block; font-size: 0.8rem; font-weight: normal; text-transform: none; color: var(--clr-text-muted);">Or upload a design (PNG/JPG):</label>
+                                <input type="file" id="file-sweatshirts" class="custom-input file-input" accept="image/png, image/jpeg" style="padding: 0.5rem; font-size: 0.8rem;">
+                            </div>
+                        </div>
+                        
+                        <div class="product-action">
+                            <span class="price" id="price-sweatshirts">₦12,500</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4: Hoodies -->
+                <article class="product-card" data-id="hoodies">
+                    <div class="product-img-wrapper">
+                        <img src="assets/hoodie.png" alt="Premium Black Hoodie" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hoodies</h3>
+                        <p class="product-desc">Warm, durable, iconic.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="type-hoodies">Style:</label>
+                                <select id="type-hoodies" class="custom-select print-type-select">
+                                    <option value="13000">Plain (₦13,000)</option>
+                                    <option value="14500">Flex Prints (₦14,500)</option>
+                                    <option value="15500">DTF (₦15,500)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="size-hoodies">Size:</label>
+                                <select id="size-hoodies" class="custom-select size-select">
+                                    <option value="S">Small (S)</option>
+                                    <option value="M" selected>Medium (M)</option>
+                                    <option value="L">Large (L)</option>
+                                    <option value="XL">Extra Large (XL)</option>
+                                    <option value="XXL">Double Extra Large (XXL)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="pos-hoodies">Print Position:</label>
+                                <select id="pos-hoodies" class="custom-select pos-select">
+                                    <option value="Front Only">Front Only</option>
+                                    <option value="Back Only">Back Only</option>
+                                    <option value="Front & Back">Front & Back</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="color-hoodies">Color:</label>
+                                <input type="text" id="color-hoodies" class="custom-input color-input" list="color-suggestions" placeholder="Type or select color" value="Black">
+                            </div>
+                            <div class="option-group">
+                                <label for="design-hoodies">Design/Inscription:</label>
+                                <input type="text" id="design-hoodies" class="custom-input design-input" placeholder="What to print? (Optional)">
+                                <label for="file-hoodies" style="margin-top: 0.5rem; display: block; font-size: 0.8rem; font-weight: normal; text-transform: none; color: var(--clr-text-muted);">Or upload a design (PNG/JPG):</label>
+                                <input type="file" id="file-hoodies" class="custom-input file-input" accept="image/png, image/jpeg" style="padding: 0.5rem; font-size: 0.8rem;">
+                            </div>
+                        </div>
+                        
+                        <div class="product-action">
+                            <span class="price" id="price-hoodies">₦13,000</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 5: Caps -->
+                <article class="product-card" data-id="caps">
+                    <div class="product-img-wrapper">
+                        <img src="assets/cap.png" alt="Premium Beige Baseball Cap" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Caps</h3>
+                        <p class="product-desc">Structured classic baseball cap.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="type-caps">Style:</label>
+                                <select id="type-caps" class="custom-select print-type-select">
+                                    <option value="3500">Plain (₦3,500)</option>
+                                    <option value="4000">Flex Prints (₦4,000)</option>
+                                    <option value="4500">DTF (₦4,500)</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="size-caps">Size:</label>
+                                <select id="size-caps" class="custom-select size-select">
+                                    <option value="One Size">One Size Fits All</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="color-caps">Color:</label>
+                                <input type="text" id="color-caps" class="custom-input color-input" list="color-suggestions" placeholder="Type or select color" value="Beige">
+                            </div>
+                            <div class="option-group">
+                                <label for="design-caps">Design/Inscription:</label>
+                                <input type="text" id="design-caps" class="custom-input design-input" placeholder="What to print? (Optional)">
+                                <label for="file-caps" style="margin-top: 0.5rem; display: block; font-size: 0.8rem; font-weight: normal; text-transform: none; color: var(--clr-text-muted);">Or upload a design (PNG/JPG):</label>
+                                <input type="file" id="file-caps" class="custom-input file-input" accept="image/png, image/jpeg" style="padding: 0.5rem; font-size: 0.8rem;">
+                            </div>
+                        </div>
+                        
+                        <div class="product-action">
+                            <span class="price" id="price-caps">₦3,500</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 6: Totebags -->
+                <article class="product-card" data-id="totebags">
+                    <div class="product-img-wrapper">
+                        <img src="assets/totebag.png" alt="Premium Canvas Tote Bag" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Totebags</h3>
+                        <p class="product-desc">Eco-friendly heavy canvas.</p>
+                        
+                        <div class="product-options">
+                            <div class="option-group">
+                                <label for="type-totebags">Style:</label>
+                                <select id="type-totebags" class="custom-select print-type-select">
+                                    <option value="4000">Plain (₦4,000)</option>
+                                    <option value="5000">Flex Prints (₦5,000)</option>
+                                    <option value="6500">DTF (₦6,500)</option>
+                                </select>
+                            </div>
+                            <div class="option-group" style="display: none;">
+                                <label for="size-totebags">Size:</label>
+                                <select id="size-totebags" class="custom-select size-select">
+                                    <option value="Standard">Standard Canvas</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="pos-totebags">Print Position:</label>
+                                <select id="pos-totebags" class="custom-select pos-select">
+                                    <option value="Front Only">Front Only</option>
+                                    <option value="Back Only">Back Only</option>
+                                    <option value="Front & Back">Front & Back</option>
+                                </select>
+                            </div>
+                            <div class="option-group">
+                                <label for="color-totebags">Color:</label>
+                                <input type="text" id="color-totebags" class="custom-input color-input" list="color-suggestions" placeholder="Type or select color" value="Natural">
+                            </div>
+                            <div class="option-group">
+                                <label for="design-totebags">Design/Inscription:</label>
+                                <input type="text" id="design-totebags" class="custom-input design-input" placeholder="What to print? (Optional)">
+                                <label for="file-totebags" style="margin-top: 0.5rem; display: block; font-size: 0.8rem; font-weight: normal; text-transform: none; color: var(--clr-text-muted);">Or upload a design (PNG/JPG):</label>
+                                <input type="file" id="file-totebags" class="custom-input file-input" accept="image/png, image/jpeg" style="padding: 0.5rem; font-size: 0.8rem;">
+                            </div>
+                        </div>
+                        
+                        <div class="product-action">
+                            <span class="price" id="price-totebags">₦4,000</span>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews-section">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The quality of the hoodies is unmatched. Highly recommend Shay's Hub for premium merch!"</p>
+                    <p class="reviewer">- Adebayo T.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Love the elegant packaging and the attention to detail. Excellence truly is in the details."</p>
+                    <p class="reviewer">- Sarah M.</p>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Best sweatpants I own. The Flex Prints held up perfectly after multiple washes."</p>
+                    <p class="reviewer">- Chinedu O.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <div class="brand-info">
+                <h2>Shay's Hub.</h2>
+                <p>...Excellence in details.</p>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>📞 09013460894</p>
+                <p>📸 Instagram: <a href="https://instagram.com/shays.hub_" target="_blank" style="color: white; text-decoration: underline;">@shays.hub_</a></p>
+            </div>
+            
+            <div class="newsletter">
+                <h3>Join the Hub</h3>
+                <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Subscribed!');">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Shay's Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be injected here via JS -->
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">₦0</span>
+            </div>
+            <div class="checkout-actions">
+                <button class="checkout-btn paystack-btn" id="paystack-btn">Pay Online (Paystack)</button>
+                <button class="checkout-btn whatsapp-btn" id="checkout-btn">Checkout via WhatsApp</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Datalist for Colors -->
+    <datalist id="color-suggestions">
+        <option value="Black">
+        <option value="White">
+        <option value="Maroon">
+        <option value="Grey">
+        <option value="Navy Blue">
+        <option value="Beige">
+    </datalist>
+
+    <script src="script.js"></script>
+</body>
+</html>
